@@ -21,12 +21,28 @@ char get_soc(char soc);
 //Get the character's "eco" from the user. This time taking a previous input (soc) into account
 char get_eco(char eco, char soc);
 
-//
+//In case the user changed his mind about something, this function will tell the calling function that
+char changeofheart();
+
+/*
+The option to change your mind now works as it should.
+
+
+
+*/
+//IMPORTANT: Remember when getting a character to use a dummy char variable to "absorb" the \n characater, to prevent "pollution" of the input stream
 //NEED TO ADD NAME OPTION NEXT. And afterwards we'll see
+/*NEED TO ADD LATER: 
+Writing a character struct to a file,
+Adding another Program which can read a character struct from a file
+Addin a program which the other program can use, containing all sort of functions, like getting a character's stats, changing them etc.
+
+*/
 int main(int argc, char* argv[])
 {
 	char soc, eco; //The "social" general status of the character, and the economical if the character is urban or rural (Noble and Tribal are assigned automatically)
 	char race; //A race for the character.
+	char name[25]; //The character's name.
 	printf("Choose Your race amongst the following:");
 	skip;
 	race = get_race('0'); //Getting the character's race using the get_race function
@@ -101,7 +117,12 @@ char get_race(char race)
 			printf("Illegal input. Try again.");
 			skip;
 		}
-
+		//If the user put a legal input (meaning race is not '0') will send him to the changeofheart function. Reusing blank for saving memory
+		if (race != '0')
+			blank = changeofheart();
+		//If he changed his mind, will set race to 0 so that the do while will continue
+		if (blank == '0')
+			race = '0';
 	} while (race == '0');
 	return race;
 }
@@ -154,7 +175,12 @@ char get_soc(char soc)
 			printf("Illegal input. Try again.");
 			skip;
 		}
-
+		//If the user put a legal input (meaning race is not '0') will send him to the changeofheart function. Reusing blank for saving memory
+		if (soc != '0')
+			blank = changeofheart();
+		//If he changed his mind, will set race to 0 so that the do while will continue
+		if (blank == '0')
+			soc = '0';
 	} while (soc == '0');
 	return soc;
 }
@@ -232,7 +258,31 @@ char get_eco(char eco, char soc)
 			printf("Illegal input. Try again.");
 			skip;
 		}
-
+		//If the user put a legal input (meaning race is not '0') will send him to the changeofheart function. Reusing blank for saving memory
+		if (eco != '0')
+			blank = changeofheart();
+		//If he changed his mind, will set race to 0 so that the do while will continue
+		if (blank == '0')
+			eco = '0';
 	} while (eco == '0');
 	return eco;
+}
+
+//In case the user changed his mind about something, this function will tell the calling function that.
+//If the user changed his mind, the function will return '0'. otherwise, it will return '1'
+char changeofheart()
+{
+	printf("Are you sure of your choice? If you'll want to change it, type in Y. Otherwise type something else");
+	skip;
+	char flag = getc(stdin);
+	if ((flag == 'y') || (flag == 'Y'))
+	{
+		flag = getc(stdin); //"Absorbing" the \n character so that it won't "pollute" the input stream.
+		return '0';
+	}
+	else
+	{
+		flag = getc(stdin); //"Absorbing" the \n character so that it won't "pollute" the input stream.
+		return '1';
+	}
 }
