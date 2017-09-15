@@ -36,7 +36,7 @@ print("The character's name is:", character['Name']); #TEST printing the name
 
 #Prompting the user to choose his race
 print("Choose Your race amongst the following:");
-legal = ['H', 'h', 'E', 'e', 'D', 'd', 'G', 'g', 'B', 'b', 'C']; #Creating a list of legal input for the races so that it can easily be checked whether the input is legal
+legal = ['H', 'h', 'E', 'e', 'D', 'd', 'G', 'g', 'B', 'b', 'C', 'c']; #Creating a list of legal input for the races so that it can easily be checked whether the input is legal
 #Will keep asking the user for a race as long as he didn't put a legal input. Using the insert_dat function
 insert_dat(legal,'Race',"(H)uman, (E)lf, (D)warf, (G)nome, (B)asil, (C)P");
 print("The character's race is:", character['Race']); #TEST printing the characer's race
@@ -62,7 +62,8 @@ print("The character's eco is:", character['Eco']);  # TEST printing the charace
 
 #Update log:
 #15.9.2017, 18:01 - Changed "character" from a list to a dictionary
-#and added extra "padding" to the messages showing the chosen input
+#and added extra "padding" to the messages showing the chosen input.
+#18:05 - Fixed something that I just noticed. Added 'c' to the legal list of race input
 
 #NEED TO ADD LATER:
 #Writing a character to a file,
