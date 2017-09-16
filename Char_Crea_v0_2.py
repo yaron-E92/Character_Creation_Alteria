@@ -1,10 +1,10 @@
 def insert_dat(legal,index,message):
-    """This function recieves a list of legal inputs,
+    """This function receives a list of legal inputs,
      ,the index in character in which to input the data
      and the message to give the user as long as he/she is not finished.
      The function prompts the user for input and will continue so
      if the input is not in legal. If it is, the function will still
-     give the user the oppurtunity to change the input"""
+     give the user the opportunity to change the input"""
 
     flag = '0';  # A flag for the while loop
     while (flag == '0'):
@@ -31,6 +31,18 @@ class Character:
         self.summary = summary;
         self.attributes = attributes;
 
+    def raceup(self, updict):
+        """This function changes the self.summary['Race'] from single letters to race names.
+        The updict dictionary will have the translations"""
+        self.summary['Race'] = updict[self.summary['Race']];
+
+
+
+def ratt(mister):
+    """Applying the race related benefits and drawbacks to the attributes.
+    Accepting a Character class variable (mister)"""
+    str = {"Human": 0};
+
 
 # Preparing the attributes 'dictionary' for the character initialization
 attr = {'Str': 8, 'Dex': 8, 'Cha': 8, 'Int': 8, 'Wis': 8, 'End': 8}; # The attributes start at 8
@@ -48,14 +60,16 @@ print("The character's name is:", character.summary['Name']); # TEST printing th
 
 # Prompting the user to choose his race
 print("Choose Your race amongst the following:");
-legal = ['H', 'h', 'E', 'e', 'D', 'd', 'G', 'g', 'B', 'b', 'C', 'c']; # Creating a list of legal input for the races so that it can easily be checked whether the input is legal
-# Will keep asking the user for a race as long as he didn't put a legal input. Using the insert_dat function
+legal = ['H', 'h', 'E', 'e', 'D', 'd', 'G', 'g', 'B', 'b', 'C', 'c']; # Creating a list of legal input for the races so
+# that it can easily be checked whether the input is legal.
+# Will keep asking the user for a race as long as he didn't put a legal input. Using the insert_dat function.
 insert_dat(legal,'Race',"(H)uman, (E)lf, (D)warf, (G)nome, (B)asil, (C)P");
 print("The character's race is:", character.summary['Race']); # TEST printing the characer's race
-legal = ['N','n','U','u','R','r','T','t']; # Creating a list of legal input for soc so that it can easily be checked whether the input is legal
+legal = ['N','n','U','u','R','r','T','t']; # Creating a list of legal input for soc so that it can easily be checked
+# whether the input is legal.
 print("Choose Your background amongst the following:");
 # Prompting the user to choose a soc using the letters in brackets.
-# The list of legal inputs has changed
+# The list of legal inputs has changed.
 insert_dat(legal,'Soc',"(N)oble, (U)rban, (R)ural, (T)ribal (or from a small community)");
 print("The character's soc is:", character.summary['Soc']); # TEST printing the characer's soc
 if (character.summary['Soc'] == 'N' or character.summary['Soc'] == 'n'):
@@ -65,20 +79,28 @@ elif (character.summary['Soc'] == 'T' or character.summary['Soc'] == 't'):
     character.summary['Eco'] = 'l'; # Giving Tribal characters the "lower class" economical status
     print("Tribals are automatically from the lower economical class");
 else:
-    legal = ['H', 'h', 'M', 'm', 'L', 'l', 'S', 's'];  # Creating a list of legal input for eco so that it can easily be checked whether the input is legal
+    legal = ['H', 'h', 'M', 'm', 'L', 'l', 'S', 's'];  # Creating a list of legal input for eco so that it can easily be
+    #  checked whether the input is legal.
     print("Choose Your background amongst the following:");
     # Prompting the user to choose a eco IF he chose urban or rural using the letters in brackets.
     # The list of legal inputs has changed
     insert_dat(legal, 'Eco', "(H)igher class, (M)iddle class, (L)ower class, (S)treet urchin");
 print("The character's eco is:", character.summary['Eco']);  # TEST printing the characer's eco
 print("The character's strength is:", character.attributes['Str']);  # TEST printing the characer's strength
+rup = {'H': "Human", 'h': "Human", 'E': "Elf", 'e': "Elf", 'D': "Dwarf", 'd': "Dwarf", 'G': "Gnome", 'g': "Gnome",
+       'B': "Basil", 'b': "Basil", 'C': "CP", 'c': "CP"}; # Preparing the updating dictionary for race
+character.raceup(rup); # Updating the race from a single letter to a word
+print("The character's race is:", character.summary['Race']); # TEST printing the characer's race
 
 # Update log:
-# 15.9.2017, 18:01 - Changed "character" from a list to a dictionary
+# 15.9.2017, 18:01 - Changed "character" from a list to a dictionary.
 # and added extra "padding" to the messages showing the chosen input.
-# 18:05 - Fixed something that I just noticed. Added 'c' to the legal list of race input
-# 22:10 - NEW IN V0.2 - Decided to create a 'class' for character, so that it will have the current data and a seperate dictionary for attributes
+# 18:05 - Fixed something that I just noticed. Added 'c' to the legal list of race input.
+# 22:10 - NEW IN V0.2 - Decided to create a 'class' for character, so that it will have the current data and a seperate
+# dictionary for attributes.
 # 22:42 - Created a new Instance variable in the 'Character' class: a dictionary of attributes.
+# 16.9.2017, 13:46 - Created the ratt function for later implementation (will add race related bonuses and drawbacks to
+# starting attributes), and implemented a function for converting race from single letters to words. IT WORKS!
 
 # NEED TO ADD LATER:
 # Writing a character to a file,
