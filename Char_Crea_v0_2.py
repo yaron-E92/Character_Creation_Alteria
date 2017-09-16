@@ -40,8 +40,22 @@ class Character:
 
 def ratt(mister):
     """Applying the race related benefits and drawbacks to the attributes.
-    Accepting a Character class variable (mister)"""
-    str = {"Human": 0};
+    Accepting a Character class variable (mister).
+    :type mister: Character"""
+    #  b&d == benefits and drawbacks
+    stre = {"Human": 0, "Basil": 3, "Dwarf": 2, "Elf": 0, "Gnome": 0, "CP": 0}; #The strength b&d
+    dex = {"Human": 0, "Basil": -2, "Dwarf": -1, "Elf": 2, "Gnome": 0, "CP": 0};  # The dexterity b&d
+    cha = {"Human": 0, "Basil": 0, "Dwarf": 0, "Elf": 1, "Gnome": 0, "CP": 0};  # The charisma b&d
+    int = {"Human": 0, "Basil": 1, "Dwarf": 1, "Elf": 2, "Gnome": 2, "CP": 0};  # The intelligence b&d
+    wis = {"Human": 0, "Basil": 0, "Dwarf": 0, "Elf": 2, "Gnome": 2, "CP": 0};  # The wisdom b&d
+    end = {"Human": 0, "Basil": 3, "Dwarf": 3, "Elf": -2, "Gnome": 1, "CP": 0};  # The endurance b&d
+    attri1=(stre, dex, cha, int, wis, end); # A tuple for the above dictionaries
+    attri2 = ('Str', 'Dex', 'Cha', 'Int', 'Wis', 'End'); # A tuple for the keys of the Character.attributes
+    # Now, a for loop to update all the attributes. The loop will run over the values of attri2 and will use them to
+    # update the Character.attributes[attri2[i]] with the values in attri1[i]
+    for i in range(len(attri2)):
+        mister.attributes[attri2[i]] += attri1[i][mister.summary['Race']]; # Hopefully updating properly
+
 
 
 # Preparing the attributes 'dictionary' for the character initialization
@@ -64,6 +78,9 @@ legal = ['H', 'h', 'E', 'e', 'D', 'd', 'G', 'g', 'B', 'b', 'C', 'c']; # Creating
 # that it can easily be checked whether the input is legal.
 # Will keep asking the user for a race as long as he didn't put a legal input. Using the insert_dat function.
 insert_dat(legal,'Race',"(H)uman, (E)lf, (D)warf, (G)nome, (B)asil, (C)P");
+rup = {'H': "Human", 'h': "Human", 'E': "Elf", 'e': "Elf", 'D': "Dwarf", 'd': "Dwarf", 'G': "Gnome", 'g': "Gnome",
+       'B': "Basil", 'b': "Basil", 'C': "CP", 'c': "CP"}; # Preparing the updating dictionary for race
+character.raceup(rup); # Updating the race from a single letter to a word
 print("The character's race is:", character.summary['Race']); # TEST printing the characer's race
 legal = ['N','n','U','u','R','r','T','t']; # Creating a list of legal input for soc so that it can easily be checked
 # whether the input is legal.
@@ -86,11 +103,9 @@ else:
     # The list of legal inputs has changed
     insert_dat(legal, 'Eco', "(H)igher class, (M)iddle class, (L)ower class, (S)treet urchin");
 print("The character's eco is:", character.summary['Eco']);  # TEST printing the characer's eco
-print("The character's strength is:", character.attributes['Str']);  # TEST printing the characer's strength
-rup = {'H': "Human", 'h': "Human", 'E': "Elf", 'e': "Elf", 'D': "Dwarf", 'd': "Dwarf", 'G': "Gnome", 'g': "Gnome",
-       'B': "Basil", 'b': "Basil", 'C': "CP", 'c': "CP"}; # Preparing the updating dictionary for race
-character.raceup(rup); # Updating the race from a single letter to a word
-print("The character's race is:", character.summary['Race']); # TEST printing the characer's race
+print("The character's endurance is:", character.attributes['End']);  # TEST printing the characer's endurance before ratt
+ratt(character); # Using the ratt function to apply race dependant b&d (benefits and drawbacks) to the starting attributes
+print("The character's endurance is:", character.attributes['End']);  # TEST printing the characer's endurance after ratt
 
 # Update log:
 # 15.9.2017, 18:01 - Changed "character" from a list to a dictionary.
@@ -101,6 +116,9 @@ print("The character's race is:", character.summary['Race']); # TEST printing th
 # 22:42 - Created a new Instance variable in the 'Character' class: a dictionary of attributes.
 # 16.9.2017, 13:46 - Created the ratt function for later implementation (will add race related bonuses and drawbacks to
 # starting attributes), and implemented a function for converting race from single letters to words. IT WORKS!
+# 14:36 - Changing the location of the race update to right after the race input.
+# 17:43 - First implementation attempt of ratt function - a function that is supposed to apply race dependant
+# b&d (benefits and drawbacks) to the starting attributes. It works!
 
 # NEED TO ADD LATER:
 # Writing a character to a file,
