@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbb0ff34-ff7d-441f-987f-dc62e7a78f4c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Char_Crea_v0_2.py" afterPath="$PROJECT_DIR$/Char_Crea_v0_2.py" />
-    </list>
+    <list default="true" id="cbb0ff34-ff7d-441f-987f-dc62e7a78f4c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="Char_Crea_v0_2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Char_Crea_v0_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="120" column="68" lean-forward="false" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
+            <state relative-caret-position="2331">
+              <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
               <folding>
                 <element signature="e#1617#1822#0" expanded="false" />
               </folding>
@@ -285,8 +283,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Char_Crea_v0_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="120" column="68" lean-forward="false" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
+        <state relative-caret-position="2331">
+          <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
           <folding>
             <element signature="e#1617#1822#0" expanded="false" />
           </folding>
