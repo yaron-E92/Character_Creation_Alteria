@@ -22,6 +22,7 @@ def insert_dat(legal,index,message):
             else:
                 flag = '1';
 
+
 class Character:
     '''A class containing the data about a character. Both the old data,
     the name, race, soc and eco, and the attributes'''
@@ -35,6 +36,43 @@ class Character:
         """This function changes the self.summary['Race'] from single letters to race names.
         The updict dictionary will have the translations"""
         self.summary['Race'] = updict[self.summary['Race']];
+
+
+class Skill:
+    '''A class containing The data about the skill of a character: The skill level, the proficiency growth, the
+    associated attribute, multiplier (like major class multiplier, minor class multiplier, minor multiplier or hobby
+    multiplier)'''
+    def __init__(self, attribute):
+        """The initialization prepares 5 variables. The skill lvl, the current xp in skill lvl, the proficiency growth,
+        the associated attribute and the multiplier
+        The initial proficiency growth will equal the level.
+        The default multiplier will be 1"""
+        self.lvl = 0;
+        self.xp = 0;
+        self.progro = self.lvl;
+        self.attribute = attribute;
+        self.mulp = 1;
+
+    def classup(self, updict):
+        """This function changes the self.lvl from to the starting lvl associated with the class.
+        The updict dictionary will have the translations"""
+        self.lvl = 0; # Not yet implemented
+        self.progro = self.lvl;
+
+    def lvlup(self):
+        """This simply level ups the skill level, and if the prof. growth equals the lvl it goes up too"""
+        if (self.progro == self.lvl):
+            self.progro += 1;
+        self.lvl += 1;
+
+    def xpup(self, amount):
+        """This adds the specified amount to the xp. If the xp hits 100, then it lvl ups the skill and adds any residual
+        xp to the next lvl. In the future, it might morph the residual xp"""
+        if ( (self.xp + amount) < 100):
+            self.xp += amount; # If the amount doesn't push the xp over 100, then it is just added.
+        else
+            self.xp = (self.xp + amount) - 100; # If it flows beyond, the remainder is saved for next lvl and...
+            self.lvlup(); # The skill is lvld up.
 
 
 
@@ -119,6 +157,11 @@ print("The character's endurance is:", character.attributes['End']);  # TEST pri
 # 14:36 - Changing the location of the race update to right after the race input.
 # 17:43 - First implementation attempt of ratt function - a function that is supposed to apply race dependant
 # b&d (benefits and drawbacks) to the starting attributes. It works!
+# 22.9.2017, 00:39 - Added the class 'Skill', which has its 5 variables (lvl,xp,profgro,attribute and multiplier)
+# Implemented an init, a lvl up function for the skill which also make sure that profgro is at least as high as the lvl
+# Implemented an xpup function that gets the amount to add and levels up the skill if goes to 100 or beyond, and any
+# residual gets transferred to next lvl. Also, prepared a function classup which wasn't really implemented as of now.
+# In a future update the dummy function will be implemented.
 
 # NEED TO ADD LATER:
 # Writing a character to a file,
