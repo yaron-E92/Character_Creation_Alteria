@@ -42,6 +42,7 @@ class Skill:
     '''A class containing The data about the skill of a character: The skill level, the proficiency growth, the
     associated attribute, multiplier (like major class multiplier, minor class multiplier, minor multiplier or hobby
     multiplier)'''
+
     def __init__(self, attribute):
         """The initialization prepares 5 variables. The skill lvl, the current xp in skill lvl, the proficiency growth,
         the associated attribute and the multiplier
@@ -70,7 +71,7 @@ class Skill:
         xp to the next lvl. In the future, it might morph the residual xp"""
         if ( (self.xp + amount) < 100):
             self.xp += amount; # If the amount doesn't push the xp over 100, then it is just added.
-        else
+        else:
             self.xp = (self.xp + amount) - 100; # If it flows beyond, the remainder is saved for next lvl and...
             self.lvlup(); # The skill is lvld up.
 
