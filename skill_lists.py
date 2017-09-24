@@ -108,12 +108,16 @@ finesse_type.uphid([0, 1, 2, 0, 1, 1, 0]);
 social_type.uphid([0, 0, 0, 2, 0, 0]);
 practical_type.uphid([2, 2, 0, 2, 2]);
 attu = ['Str', 'Dex', 'Cha', 'Int', 'Wis', 'End']; # Attributes list for convenience
-# Now: the relatt
+# Now: the relatt. Not sure about some of them. Like some of the armor skill, and the music skill.
 knowledge_type.uprel([attu[3]] * len(knowledge_type.skills));
 arcane_type.uprel([attu[3], attu[3], attu[3], attu[3], attu[3], attu[3], attu[3], attu[4], attu[4], attu[4],
                    attu[3], attu[3], attu[3], attu[3], attu[3], attu[3], attu[3]]);
 # print(arcane_type.relatt); # TEST
-physical_type.uprel([attu[0], attu[0], attu[1], attu[0], attu[0], attu[0], attu[1], attu[0], attu[5], attu[5], attu[0], attu[0], attu[1]]);
+physical_type.uprel([attu[0], attu[0], attu[1], attu[0], attu[0], attu[0], attu[1], attu[0], attu[5], attu[5], attu[0],
+                     attu[0], attu[1]]);
+finesse_type.uprel([attu[1], attu[3], attu[1], attu[4], attu[1], attu[1], attu[4]]);
+social_type.uprel([attu[2], attu[4], attu[2], attu[2], attu[2], attu[2]]);
+practical_type.uprel([attu[3], attu[1], attu[4], attu[2], attu[3]]);
 # Finally: The Skill_list
 Skills = Skill_list(knowledge_type, arcane_type, physical_type, finesse_type, social_type, practical_type);
 
@@ -134,4 +138,5 @@ Skills = Skill_list(knowledge_type, arcane_type, physical_type, finesse_type, so
 # Skill_type_lists.
 # 21:30 - 22:22 - implemented and defined for ishidden. Added a similiar is hidden for the connections connhidden,
 # implemented uprel and started defining the related attributes. Defined for knowledge arcane and physical.
+# 24.9.2017 - 14:58 - Finished doing uprel for all types.
 
