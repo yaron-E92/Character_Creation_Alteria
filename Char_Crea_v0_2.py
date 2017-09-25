@@ -1,3 +1,5 @@
+import skill_lists; # Importing skill_lists, so it will be executed and then usable
+
 def insert_dat(legal,index,message):
     """This function receives a list of legal inputs,
      ,the index in character in which to input the data
@@ -31,11 +33,35 @@ class Character:
         """The initialization prepares 2 'dictionary' variables"""
         self.summary = summary;
         self.attributes = attributes;
+        self.skills = [];
 
     def raceup(self, updict):
         """This function changes the self.summary['Race'] from single letters to race names.
         The updict dictionary will have the translations"""
         self.summary['Race'] = updict[self.summary['Race']];
+
+    def skillin(self):
+        """Initialize all the skill whose ishidden is 0. Should be used after the choice of class when it will be
+        implemented"""
+        # We'll use skilladd on all types. Any skill with ishidden == 0 will be added to self.skills
+        self.skilladd(skill_lists.Skills.Knowledge,0); # Starting with adding the skills in knowledge type
+        self.skilladd(skill_lists.Skills.Arcane, 0); # Adding the skills in Arcane type
+        self.skilladd(skill_lists.Skills.Physical, 0);  # Adding the skills in Physical type
+        self.skilladd(skill_lists.Skills.Finesse, 0);  # Adding the skills in Finesse type
+        self.skilladd(skill_lists.Skills.Social, 0);  # Adding the skills in Social type
+        self.skilladd(skill_lists.Skills.Practical, 0);  # Adding the skills in Practical type
+
+    def skilladd(self, stype, flag):
+        """A function for adding a new skill to the self.skills list. It will either add all not hidden skills in stype
+        (If it gets a 0 in flag) Or a specific skill (if it gets a 1 in flag).
+        As of now, I haven't implemented the adding of single skills"""
+        if(flag == 0):
+            for i in range(len(stype.ishidden)):
+                if (stype.ishidden[i] == 0):
+                    name = stype.skills[i];
+                    attribute = stype.relatt[i];
+                    self.skills.append(Skill(attribute, name));
+
 
 
 class Skill:
@@ -43,16 +69,17 @@ class Skill:
     associated attribute, multiplier (like major class multiplier, minor class multiplier, minor multiplier or hobby
     multiplier)'''
 
-    def __init__(self, attribute):
+    def __init__(self, attribute, name):
         """The initialization prepares 5 variables. The skill lvl, the current xp in skill lvl, the proficiency growth,
         the associated attribute and the multiplier
         The initial proficiency growth will equal the level.
-        The default multiplier will be 1"""
+        The default multiplier will be 1. Added a 6th variable - name"""
         self.lvl = 0;
         self.xp = 0;
         self.progro = self.lvl;
         self.attribute = attribute;
         self.mulp = 1;
+        self.name = name;
 
     def classup(self, updict):
         """This function changes the self.lvl from to the starting lvl associated with the class.
@@ -145,6 +172,15 @@ print("The character's eco is:", character.summary['Eco']);  # TEST printing the
 print("The character's endurance is:", character.attributes['End']);  # TEST printing the characer's endurance before ratt
 ratt(character); # Using the ratt function to apply race dependant b&d (benefits and drawbacks) to the starting attributes
 print("The character's endurance is:", character.attributes['End']);  # TEST printing the characer's endurance after ratt
+# print(skill_lists.arcane_type.relatt); # TEST
+# print(skill_lists.Skills.Knowledge.ishidden); # TEST
+# print(len(skill_lists.Skills.Knowledge.ishidden)); # TEST
+character.skillin(); #Activating the skill initialization. It is incomplete as of now
+# TEST
+# for i in range(len(character.skills)):
+#     print(character.skills[i].name);  # TEST
+# TEST
+
 
 # Update log:
 # 15.9.2017, 18:01 - Changed "character" from a list to a dictionary.
@@ -163,6 +199,17 @@ print("The character's endurance is:", character.attributes['End']);  # TEST pri
 # Implemented an xpup function that gets the amount to add and levels up the skill if goes to 100 or beyond, and any
 # residual gets transferred to next lvl. Also, prepared a function classup which wasn't really implemented as of now.
 # In a future update the dummy function will be implemented.
+# 25.9.2017, 21:13 - added the Skills variable to the Character class, which is a list to be filled with Skill class
+# objects.
+# 21:17 - Imported skill_lists!
+# 21:23 - Added a 6th variable to the Skill class - name
+# between 21:00 and 21:49 - Added the skillin function to the Character class, to initialize the skills variable. At the
+# future, it will activate after the class choice, and will have the relevant skills
+# 21:52 - Added skilladd tothe Character class, a function for adding a new skill to the self.skills list.
+# 21:57 - skilladd has two modes - either adding all non hidden skills in a type (for skillin) or a specific skill.
+# As of now, I haven't implemented the adding of single skills
+# 22:02 - used the skilladd in skillin, and now it adds all not hidden skills to the Character.skills, at level 0.
+# Next on the agenda: classes. I think
 
 # NEED TO ADD LATER:
 # Writing a character to a file,
