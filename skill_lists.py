@@ -48,9 +48,8 @@ class Skill_type_list:
         self.relatt = uplist;
 
 
-
 # defining the 6 lists which will go into the 3 skill_type_list
-knolist = ["Arcana", "History(general)", "History(specific countries)", "History(specific races)", "Nature",
+knolist = ["Arcana", "History(general)", "History(specific countries)", "History(specific races)", "Nature(knowledge)",
            "Sociology(general)", "Sociology(knowledge about specific cultures)", "Theology and religion(general)",
            "Theology and religion(specific religions)"];
 arlist = ["Air magic", "Dark magic", "Earth magic", "Electricity magic", "Fire magic", "Healing magic", "Light magic",
@@ -139,4 +138,8 @@ Skills = Skill_list(knowledge_type, arcane_type, physical_type, finesse_type, so
 # 21:30 - 22:22 - implemented and defined for ishidden. Added a similiar is hidden for the connections connhidden,
 # implemented uprel and started defining the related attributes. Defined for knowledge arcane and physical.
 # 24.9.2017 - 14:58 - Finished doing uprel for all types.
+# 26.9.2017, 00:25 - Added to the Nature knowledge skill (knowledge) to the name bacause of a problem with the class
+# skills in the relevant file: the connection to the nature source and the nature knowledge had the same name so the
+# value was changed instead of creating the new key. Would probably try at least to implement some other fix? We'll see
+# later. I want to finish quickly for now.
 
