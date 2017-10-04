@@ -84,6 +84,36 @@ elif (cflag == "fighter"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 30});
     elif (cflag == "R"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 30});
+    # Choosing the secondary weapon proficiency
+    cflag = insert_dat(legal, "Choose Your secondary weapon proficiency between (O)ne handed & shield, (T)wo handed and "
+                              "(R)anged");
+    # Updating the dictionary according to subclass
+    if (cflag == "O"):
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[5]: 15,
+                                    skill_lists.Skills.Physical.skills[7]: 15});
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 15});
+    elif (cflag == "R"):
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 15});
+    # Choosing the armor type
+    legal = ["H", "M"];  # Preparing the "legal" list for the subclasses.
+    cflag = insert_dat(legal, "Choose Your armor proficiency between (H)eavy and (M)edium");
+    # Updating the dictionary according to subclass
+    if (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[1]: 25});
+    elif (cflag == "M"):
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[4]: 25});
+    # Choosing the subclass
+    legal = ["N", "M", "U"];  # Preparing the "legal" list for the subclasses.
+    cflag = insert_dat(legal, "Choose Your subclass between (N)ature, (M)edic and "
+                              "(U)rban");
+    # Updating the dictionary according to subclass
+    if (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[4]: 15});
+    elif (cflag == "M"):
+        Charclass.Claskills.update({skill_lists.Skills.Practical.skills[2]: 15});
+    elif (cflag == "U"):
+        Charclass.Claskills.update({skill_lists.Skills.Social.skills[5]: 15});
 
 print(Charclass.Claskills); # TEST
 
@@ -111,3 +141,6 @@ print(Charclass.Claskills); # TEST
 # the name of the variables to Charclass and added the names "Druid" and "Cleric in the right places.
 # 18:30 - Implemented the basic Fighter skills and the main weapon proficiency. Remains: Secondary weapon proficiency,
 # Armor type and whether he is a nature, medic or urban subclass
+# 4.10.2017, 14:56 - Implemented secondary weapon proficiency.
+# 15:02 - Implemented armor proficiency.
+# 15:07 - Implemented subclasses.

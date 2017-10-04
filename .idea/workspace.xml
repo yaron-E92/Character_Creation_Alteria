@@ -17,7 +17,7 @@
       <file leaf-file-name="Char_Crea.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Char_Crea.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="147">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="61" />
               <folding>
                 <element signature="e#41#1235#0" expanded="false" />
@@ -30,13 +30,13 @@
       <file leaf-file-name="skill_lists.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/skill_lists.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+            <state relative-caret-position="627">
+              <caret line="97" column="6" lean-forward="true" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
               <folding>
                 <element signature="e#22#665#0" expanded="false" />
                 <element signature="e#695#1992#0" expanded="false" />
-                <element signature="e#2066#2346#0" expanded="false" />
                 <element signature="e#2357#2645#0" expanded="false" />
+                <element signature="e#2657#2846#0" expanded="false" />
                 <element signature="e#3197#3321#0" expanded="false" />
                 <element signature="e#3761#3767#0" expanded="false" />
                 <element signature="e#4079#4085#0" expanded="false" />
@@ -51,8 +51,8 @@
       <file leaf-file-name="char_class.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/char_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+            <state relative-caret-position="391">
+              <caret line="142" column="41" lean-forward="true" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
               <folding>
                 <element signature="e#2590#3078#0" expanded="false" />
                 <element signature="e#3649#4327#0" expanded="false" />
@@ -64,7 +64,7 @@
       <file leaf-file-name="Char_Crea_v0_2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Char_Crea_v0_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-145">
+            <state relative-caret-position="105">
               <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
               <folding>
                 <element signature="e#126#1333#0" expanded="false" />
@@ -121,8 +121,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,17 +249,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="952" y="0" width="976" height="1038" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11273486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24070022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29431072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39502165" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39502165" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -296,13 +297,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/skill_lists.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+          <folding>
+            <element signature="e#22#665#0" expanded="false" />
+            <element signature="e#695#1992#0" expanded="false" />
+            <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
+            <element signature="e#3197#3321#0" expanded="false" />
+            <element signature="e#3761#3767#0" expanded="false" />
+            <element signature="e#4079#4085#0" expanded="false" />
+            <element signature="e#4263#4269#0" expanded="false" />
+            <element signature="e#5300#5472#0" expanded="false" />
+            <element signature="e#5531#5669#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Char_Crea_v0_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding>
+            <element signature="e#126#1333#0" expanded="false" />
+            <element signature="e#1357#3342#0" expanded="false" />
+            <element signature="e#1967#2759#0" expanded="false" />
+            <element signature="e#3363#5144#0" expanded="false" />
+            <element signature="e#4411#4600#0" expanded="false" />
+            <element signature="e#5170#6485#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/char_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+          <folding>
+            <element signature="e#2590#3078#0" expanded="false" />
+            <element signature="e#3649#4327#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Char_Crea.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="61" />
+          <folding>
+            <element signature="e#41#1235#0" expanded="false" />
+            <element signature="e#41#412#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skill_lists.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2562">
           <caret line="143" column="42" lean-forward="false" selection-start-line="143" selection-start-column="42" selection-end-line="143" selection-end-column="42" />
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -357,8 +414,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -413,8 +470,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -484,8 +541,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -529,8 +586,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -574,8 +631,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -619,8 +676,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -664,8 +721,8 @@
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -819,7 +876,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Char_Crea.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="147">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="61" />
           <folding>
             <element signature="e#41#1235#0" expanded="false" />
@@ -844,7 +901,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Char_Crea_v0_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
+        <state relative-caret-position="105">
           <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#126#1333#0" expanded="false" />
@@ -859,13 +916,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/skill_lists.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+        <state relative-caret-position="627">
+          <caret line="97" column="6" lean-forward="true" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
           <folding>
             <element signature="e#22#665#0" expanded="false" />
             <element signature="e#695#1992#0" expanded="false" />
-            <element signature="e#2066#2346#0" expanded="false" />
             <element signature="e#2357#2645#0" expanded="false" />
+            <element signature="e#2657#2846#0" expanded="false" />
             <element signature="e#3197#3321#0" expanded="false" />
             <element signature="e#3761#3767#0" expanded="false" />
             <element signature="e#4079#4085#0" expanded="false" />
@@ -878,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/char_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+        <state relative-caret-position="391">
+          <caret line="142" column="41" lean-forward="true" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
           <folding>
             <element signature="e#2590#3078#0" expanded="false" />
             <element signature="e#3649#4327#0" expanded="false" />
