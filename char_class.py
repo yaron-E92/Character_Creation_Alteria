@@ -36,7 +36,7 @@ def insert_dat(legal, message):
     return cflagt; # After the user inserted a final legal input, it is returned.
 
 # Changed the input from a print(message) and input() to an insert_dat.
-legal = ["druid", "cleric", "fighter"]; # Preparing the "legal" list for the classes.
+legal = ["druid", "cleric", "fighter", "mage"]; # Preparing the "legal" list for the classes.
 cflag = insert_dat(legal, "Choose Your class (all lower case)"); # Getting the name of the class from the user.
 # Using insert_dat
 if (cflag == "druid"):
@@ -48,7 +48,7 @@ if (cflag == "druid"):
     # Creating the dictionary for the basic Druid
     Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 3, skill_lists.Skills.Arcane.conn[5]: 3,
                     skill_lists.Skills.Arcane.conn[7]: 1, skill_lists.Skills.Arcane.skills[7]: 35,
-                    skill_lists.Skills.Arcane.skills[2]: 25, skill_lists.Skills.Arcane.skills[8]: 20,
+                    skill_lists.Skills.Arcane.skills[17]: 25, skill_lists.Skills.Arcane.skills[8]: 20,
                     skill_lists.Skills.Arcane.skills[9]: 20, skill_lists.Skills.Physical.skills[12]: 15,
                     skill_lists.Skills.Knowledge.skills[4]: 25, skill_lists.Skills.Finesse.skills[6]: 25}, "Druid");
     # Updating the dictionary according to subclass
@@ -57,7 +57,7 @@ if (cflag == "druid"):
     elif (cflag == "wild"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[11]: 25, skill_lists.Skills.Physical.skills[3]: 25});
     elif (cflag == "power"):
-        Charclass.Claskills[skill_lists.Skills.Arcane.skills[2]] += 10;
+        Charclass.Claskills[skill_lists.Skills.Arcane.skills[17]] += 10;
 elif (cflag == "cleric"):
     # Creating the dictionary for the basic Cleric
     Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 3, skill_lists.Skills.Arcane.conn[3]: 3,
@@ -114,6 +114,71 @@ elif (cflag == "fighter"):
         Charclass.Claskills.update({skill_lists.Skills.Practical.skills[2]: 15});
     elif (cflag == "U"):
         Charclass.Claskills.update({skill_lists.Skills.Social.skills[5]: 15});
+elif (cflag == "mage"):
+    # Creating the dictionary for the basic Fighter
+    Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 4, skill_lists.Skills.Arcane.skills[7]: 40,
+                            skill_lists.Skills.Arcane.skills[8]: 25, skill_lists.Skills.Arcane.skills[9]: 25,
+                            skill_lists.Skills.Physical.skills[12]: 15,
+                            skill_lists.Skills.Knowledge.skills[0]: 20,}, "Mage");
+    # Choosing the main magic source
+    legal = ["A", "E", "L", "N", "P", "S", "V"];  # Preparing the "legal" list for the sources.
+    cflag = insert_dat(legal, "Choose Your main Magical source between:"
+                              "(A)stronomical bodies, (E)lemental, (L)ight, (N)ature, (P)lanet, "
+                              "(S)oul, (V)oid");
+    # Updating the dictionary according to source, and the legal main magic branch choices
+    if (cflag == "A"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[0]: 3});
+        legal = ["K"]; # Preparing legal list for main magic branch depending on the source. Only TK
+    elif (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[1]: 3});
+        legal = ["A", "E", "F", "K", "R", "W"];  # Preparing legal list for main magic branch depending on the source.
+        # Air, Elec., Fire, TK, Earth, Water
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[3]: 3});
+        legal = ["H", "K", "L"];  # Preparing legal list for main magic branch depending on the source.
+        # Healing, TK or Light
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[5]: 3});
+        legal = ["H", "K", "N"];  # Preparing legal list for main magic branch depending on the source.
+        # Healing, TK or Nature
+    elif (cflag == "P"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[6]: 3});
+        legal = ["K", "R"];  # Preparing legal list for main magic branch depending on the source.
+        # TK or Earth
+    elif (cflag == "S"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[7]: 3});
+        legal = ["K", "T"];  # Preparing legal list for main magic branch depending on the source.
+        # TK or Telepathy
+    elif (cflag == "V"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[8]: 3});
+        legal = ["D", "K"];  # Preparing legal list for main magic branch depending on the source.
+        # Dark or TK
+    # Choosing the main magic branch
+    cflag = insert_dat(legal, "Choose Your main magic branch between the relevant ones "
+                              "(First letter capitalized except for Ea(R)th and Tele(K)inesis");
+    # Updating the dictionary according to subclass
+    if (cflag == "A"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 30});
+    elif (cflag == "D"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 30});
+    elif (cflag == "R"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 30});
+    elif (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 30});
+    elif (cflag == "F"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 30});
+    elif (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 30});
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 30});
+    elif (cflag == "K"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 30});
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 30});
+    elif (cflag == "W"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 30});
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 30});
 
 print(Charclass.Claskills); # TEST
 
@@ -144,3 +209,5 @@ print(Charclass.Claskills); # TEST
 # 4.10.2017, 14:56 - Implemented secondary weapon proficiency.
 # 15:02 - Implemented armor proficiency.
 # 15:07 - Implemented subclasses.
+# 8.10.2017, 11:02 - Started to implement mage, and decided to separate Nature magic from Earth magic.
+# 11:17 - Implemented main magical source and main magic branch.

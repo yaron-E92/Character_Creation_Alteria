@@ -54,7 +54,7 @@ knolist = ["Arcana", "History(general)", "History(specific countries)", "History
            "Theology and religion(specific religions)"];
 arlist = ["Air magic", "Dark magic", "Earth magic", "Electricity magic", "Fire magic", "Healing magic", "Light magic",
           "Magical power", "Mana allocation", "Mana regeneration", "Necromancy", "Shapeshifting", "Telekinesis",
-          "Telepathy", "Water magic", "Warging", "Weather magic"];
+          "Telepathy", "Water magic", "Warging", "Weather magic", "Nature magic"];
 phylist = ["Athletics", "Heavy", "Light", "Martial prowess", "Medium", "One handed", "Ranged", "Shield",
            "Stamina allocation", "Stamina regeneration", "Two handed", "Unarmed", "Unarmored"];
 filist = ["Acrobatics", "Investigation", "Lockpicking", "Perception", "Sleight of hand", "Stealth", "Survival"];
