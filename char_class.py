@@ -47,79 +47,82 @@ if (cflag == "druid"):
     # Using insert_dat
     # Creating the dictionary for the basic Druid
     Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 3, skill_lists.Skills.Arcane.conn[5]: 3,
-                    skill_lists.Skills.Arcane.conn[7]: 1, skill_lists.Skills.Arcane.skills[7]: 35,
-                    skill_lists.Skills.Arcane.skills[17]: 25, skill_lists.Skills.Arcane.skills[8]: 20,
-                    skill_lists.Skills.Arcane.skills[9]: 20, skill_lists.Skills.Physical.skills[12]: 15,
-                    skill_lists.Skills.Knowledge.skills[4]: 25, skill_lists.Skills.Finesse.skills[6]: 25}, "Druid");
+                    skill_lists.Skills.Arcane.conn[7]: 1, skill_lists.Skills.Arcane.skills[7]: 25,
+                    skill_lists.Skills.Arcane.skills[17]: 10, skill_lists.Skills.Arcane.skills[8]: 15,
+                    skill_lists.Skills.Arcane.skills[9]: 15, skill_lists.Skills.Physical.skills[12]: 15,
+                    skill_lists.Skills.Knowledge.skills[4]: 25, skill_lists.Skills.Finesse.skills[6]: 15}, "Druid");
     # Updating the dictionary according to subclass
     if (cflag == "empath"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 25, skill_lists.Skills.Practical.skills[2]: 25});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 20, skill_lists.Skills.Practical.skills[2]: 20});
     elif (cflag == "wild"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[11]: 25, skill_lists.Skills.Physical.skills[3]: 25});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[11]: 20, skill_lists.Skills.Physical.skills[3]: 20});
     elif (cflag == "power"):
-        Charclass.Claskills[skill_lists.Skills.Arcane.skills[17]] += 10;
+        Charclass.Claskills[skill_lists.Skills.Arcane.skills[17]] += 20;
+        Charclass.Claskills[skill_lists.Skills.Arcane.skills[7]] += 5;
+        Charclass.Claskills[skill_lists.Skills.Arcane.skills[8]] += 5;
+        Charclass.Claskills[skill_lists.Skills.Arcane.skills[9]] += 5;
 elif (cflag == "cleric"):
     # Creating the dictionary for the basic Cleric
     Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 3, skill_lists.Skills.Arcane.conn[3]: 3,
-                        skill_lists.Skills.Arcane.conn[7]: 1, skill_lists.Skills.Arcane.skills[7]: 35,
-                        skill_lists.Skills.Arcane.skills[8]: 20, skill_lists.Skills.Arcane.skills[6]: 20,
-                        skill_lists.Skills.Arcane.skills[9]: 20, skill_lists.Skills.Arcane.skills[5]: 25,
-                        skill_lists.Skills.Physical.skills[12]: 15,
-                        skill_lists.Skills.Knowledge.skills[8]: 25, skill_lists.Skills.Knowledge.skills[7]: 15,
-                         skill_lists.Skills.Social.skills[1]: 20, skill_lists.Skills.Social.skills[4]: 20}, "Cleric");
+                        skill_lists.Skills.Arcane.conn[7]: 1, skill_lists.Skills.Arcane.skills[7]: 25,
+                        skill_lists.Skills.Arcane.skills[8]: 15, skill_lists.Skills.Arcane.skills[6]: 15,
+                        skill_lists.Skills.Arcane.skills[9]: 15, skill_lists.Skills.Arcane.skills[5]: 25,
+                        skill_lists.Skills.Physical.skills[12]: 10,
+                        skill_lists.Skills.Knowledge.skills[8]: 20, skill_lists.Skills.Knowledge.skills[7]: 15,
+                         skill_lists.Skills.Social.skills[1]: 10, skill_lists.Skills.Social.skills[4]: 10}, "Cleric");
 elif (cflag == "fighter"):
     # Creating the dictionary for the basic Fighter
-    Charclass = Char_class({skill_lists.Skills.Physical.skills[3]: 40, skill_lists.Skills.Physical.skills[8]: 25,
-                            skill_lists.Skills.Physical.skills[9]: 25, skill_lists.Skills.Physical.skills[0]: 20,
-                            skill_lists.Skills.Social.skills[2]: 15}, "Fighter");
+    Charclass = Char_class({skill_lists.Skills.Physical.skills[3]: 25, skill_lists.Skills.Physical.skills[8]: 20,
+                            skill_lists.Skills.Physical.skills[9]: 20, skill_lists.Skills.Physical.skills[0]: 15,
+                            skill_lists.Skills.Social.skills[2]: 10}, "Fighter");
     # Choosing the main weapon proficiency
     legal = ["O", "T", "R"];  # Preparing the "legal" list for the subclasses.
     cflag = insert_dat(legal, "Choose Your main weapon proficiency between (O)ne handed & shield, (T)wo handed and "
                               "(R)anged");
     # Updating the dictionary according to subclass
     if (cflag == "O"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[5]: 30,
-                                    skill_lists.Skills.Physical.skills[7]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[5]: 25,
+                                    skill_lists.Skills.Physical.skills[7]: 25});
     elif (cflag == "T"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 25});
     elif (cflag == "R"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 25});
     # Choosing the secondary weapon proficiency
     cflag = insert_dat(legal, "Choose Your secondary weapon proficiency between (O)ne handed & shield, (T)wo handed and "
                               "(R)anged");
     # Updating the dictionary according to subclass
     if (cflag == "O"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[5]: 15,
-                                    skill_lists.Skills.Physical.skills[7]: 15});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[5]: 10,
+                                    skill_lists.Skills.Physical.skills[7]: 10});
     elif (cflag == "T"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 15});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 10});
     elif (cflag == "R"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 15});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 10});
     # Choosing the armor type
     legal = ["H", "M"];  # Preparing the "legal" list for the subclasses.
     cflag = insert_dat(legal, "Choose Your armor proficiency between (H)eavy and (M)edium");
     # Updating the dictionary according to subclass
     if (cflag == "H"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[1]: 25});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[1]: 20});
     elif (cflag == "M"):
-        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[4]: 25});
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[4]: 20});
     # Choosing the subclass
     legal = ["N", "M", "U"];  # Preparing the "legal" list for the subclasses.
     cflag = insert_dat(legal, "Choose Your subclass between (N)ature, (M)edic and "
                               "(U)rban");
     # Updating the dictionary according to subclass
     if (cflag == "N"):
-        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[4]: 15});
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[4]: 10});
     elif (cflag == "M"):
-        Charclass.Claskills.update({skill_lists.Skills.Practical.skills[2]: 15});
+        Charclass.Claskills.update({skill_lists.Skills.Practical.skills[2]: 10});
     elif (cflag == "U"):
-        Charclass.Claskills.update({skill_lists.Skills.Social.skills[5]: 15});
+        Charclass.Claskills.update({skill_lists.Skills.Social.skills[5]: 10});
 elif (cflag == "mage"):
-    # Creating the dictionary for the basic Fighter
-    Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 4, skill_lists.Skills.Arcane.skills[7]: 40,
-                            skill_lists.Skills.Arcane.skills[8]: 25, skill_lists.Skills.Arcane.skills[9]: 25,
+    # Creating the dictionary for the basic Mage
+    Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 4, skill_lists.Skills.Arcane.skills[7]: 25,
+                            skill_lists.Skills.Arcane.skills[8]: 20, skill_lists.Skills.Arcane.skills[9]: 20,
                             skill_lists.Skills.Physical.skills[12]: 15,
-                            skill_lists.Skills.Knowledge.skills[0]: 20,}, "Mage");
+                            skill_lists.Skills.Knowledge.skills[0]: 25}, "Mage");
     # Choosing the main magic source
     legal = ["A", "E", "L", "N", "P", "S", "V"];  # Preparing the "legal" list for the sources.
     cflag = insert_dat(legal, "Choose Your main Magical source between:"
@@ -158,27 +161,27 @@ elif (cflag == "mage"):
                               "(First letter capitalized except for Ea(R)th and Tele(K)inesis");
     # Updating the dictionary according to subclass
     if (cflag == "A"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 25});
     elif (cflag == "D"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 25});
     elif (cflag == "R"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 25});
     elif (cflag == "E"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 25});
     elif (cflag == "F"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 25});
     elif (cflag == "H"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 25});
     elif (cflag == "L"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 25});
     elif (cflag == "K"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 25});
     elif (cflag == "T"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 25});
     elif (cflag == "W"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 25});
     elif (cflag == "N"):
-        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 30});
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 25});
 
 print(Charclass.Claskills); # TEST
 
@@ -211,3 +214,5 @@ print(Charclass.Claskills); # TEST
 # 15:07 - Implemented subclasses.
 # 8.10.2017, 11:02 - Started to implement mage, and decided to separate Nature magic from Earth magic.
 # 11:17 - Implemented main magical source and main magic branch.
+# 28.10.2017, 22:30 - Before moving on, did rebalancing on the existing things. Anything added later will be at least
+# rebalanced to this degree
