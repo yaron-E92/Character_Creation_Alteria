@@ -36,7 +36,7 @@ def insert_dat(legal, message):
     return cflagt; # After the user inserted a final legal input, it is returned.
 
 # Changed the input from a print(message) and input() to an insert_dat.
-legal = ["druid", "cleric", "fighter", "mage"]; # Preparing the "legal" list for the classes.
+legal = ["druid", "cleric", "fighter", "mage", "sorcerer"]; # Preparing the "legal" list for the classes.
 cflag = insert_dat(legal, "Choose Your class (all lower case)"); # Getting the name of the class from the user.
 # Using insert_dat
 if (cflag == "druid"):
@@ -87,9 +87,10 @@ elif (cflag == "fighter"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 25});
     elif (cflag == "R"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 25});
+    legal = ["O", "T", "R", "U"];  # Preparing the "legal" list for the subclasses.
     # Choosing the secondary weapon proficiency
-    cflag = insert_dat(legal, "Choose Your secondary weapon proficiency between (O)ne handed & shield, (T)wo handed and "
-                              "(R)anged");
+    cflag = insert_dat(legal, "Choose Your secondary weapon proficiency between (O)ne handed & shield, (T)wo handed, "
+                              "(R)anged and (U)narmed");
     # Updating the dictionary according to subclass
     if (cflag == "O"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[5]: 10,
@@ -98,6 +99,8 @@ elif (cflag == "fighter"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[10]: 10});
     elif (cflag == "R"):
         Charclass.Claskills.update({skill_lists.Skills.Physical.skills[6]: 10});
+    elif (cflag == "U"):
+        Charclass.Claskills.update({skill_lists.Skills.Physical.skills[11]: 10});
     # Choosing the armor type
     legal = ["H", "M"];  # Preparing the "legal" list for the subclasses.
     cflag = insert_dat(legal, "Choose Your armor proficiency between (H)eavy and (M)edium");
@@ -124,70 +127,282 @@ elif (cflag == "mage"):
                             skill_lists.Skills.Physical.skills[12]: 15,
                             skill_lists.Skills.Knowledge.skills[0]: 25}, "Mage");
     # Choosing the main magic source
-    legal = ["A", "E", "L", "N", "P", "S", "V"];  # Preparing the "legal" list for the sources.
-    cflag = insert_dat(legal, "Choose Your main Magical source between:"
+    legal2 = ["A", "E", "L", "N", "P", "S", "V"];  # Preparing the "legal" list for the sources. Changed to legal2 to
+    # handle the secondary source choice
+    cflag = insert_dat(legal2, "Choose Your main Magical source between:"
                               "(A)stronomical bodies, (E)lemental, (L)ight, (N)ature, (P)lanet, "
                               "(S)oul, (V)oid");
     # Updating the dictionary according to source, and the legal main magic branch choices
     if (cflag == "A"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[0]: 3});
         legal = ["K"]; # Preparing legal list for main magic branch depending on the source. Only TK
+        legal2.remove("A");  # Removing the choice so it won't be chosen acidentally as the secondary source
     elif (cflag == "E"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[1]: 3});
         legal = ["A", "E", "F", "K", "R", "W"];  # Preparing legal list for main magic branch depending on the source.
         # Air, Elec., Fire, TK, Earth, Water
+        legal2.remove("E");  # Removing the choice so it won't be chosen acidentally as the secondary source
     elif (cflag == "L"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[3]: 3});
         legal = ["H", "K", "L"];  # Preparing legal list for main magic branch depending on the source.
         # Healing, TK or Light
+        legal2.remove("L");  # Removing the choice so it won't be chosen acidentally as the secondary source
     elif (cflag == "N"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[5]: 3});
         legal = ["H", "K", "N"];  # Preparing legal list for main magic branch depending on the source.
         # Healing, TK or Nature
+        legal2.remove("N");  # Removing the choice so it won't be chosen acidentally as the secondary source
     elif (cflag == "P"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[6]: 3});
         legal = ["K", "R"];  # Preparing legal list for main magic branch depending on the source.
         # TK or Earth
+        legal2.remove("P");  # Removing the choice so it won't be chosen acidentally as the secondary source
     elif (cflag == "S"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[7]: 3});
         legal = ["K", "T"];  # Preparing legal list for main magic branch depending on the source.
         # TK or Telepathy
+        legal2.remove("S");  # Removing the choice so it won't be chosen acidentally as the secondary source
     elif (cflag == "V"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[8]: 3});
         legal = ["D", "K"];  # Preparing legal list for main magic branch depending on the source.
         # Dark or TK
+        legal2.remove("V");  # Removing the choice so it won't be chosen acidentally as the secondary source
+    cflag = insert_dat(legal2, "Choose Your secondary Magical source between:"
+                              "(A)stronomical bodies, (E)lemental, (L)ight, (N)ature, (P)lanet, "
+                              "(S)oul, (V)oid");
+    # Updating the dictionary according to source, and the legal secondary magic branch choices
+    if (cflag == "A"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[0]: 2});
+        legal2 = ["K"]; # Preparing legal list for main magic branch depending on the source. Only TK
+    elif (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[1]: 2});
+        legal2 = ["A", "E", "F", "K", "R", "W"];  # Preparing legal list for main magic branch depending on the source.
+        # Air, Elec., Fire, TK, Earth, Water
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[3]: 3});
+        legal2 = ["H", "K", "L"];  # Preparing legal list for main magic branch depending on the source.
+        # Healing, TK or Light
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[5]: 3});
+        legal2 = ["H", "K", "N"];  # Preparing legal list for main magic branch depending on the source.
+        # Healing, TK or Nature
+    elif (cflag == "P"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[6]: 3});
+        legal2 = ["K", "R"];  # Preparing legal list for main magic branch depending on the source.
+        # TK or Earth
+    elif (cflag == "S"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[7]: 3});
+        legal2 = ["K", "T"];  # Preparing legal list for main magic branch depending on the source.
+        # TK or Telepathy
+    elif (cflag == "V"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[8]: 3});
+        legal2 = ["D", "K"];  # Preparing legal list for main magic branch depending on the source.
+        # Dark or TK
+    # Before The choice, I will fuse the legal list into the legal2 list, since the secondary choice of a branch is
+    # potantially bigger. I will use a method suggested by "RichieHindle" on stackoverflow.
+    legal2 = legal2 + list(set(legal) - set(legal2));
+    # TEST
+    # TEST print("legal list is:", legal); # TEST
+    # TEST print("legal2 list is:", legal2);  # TEST
+    # TEST
     # Choosing the main magic branch
     cflag = insert_dat(legal, "Choose Your main magic branch between the relevant ones "
                               "(First letter capitalized except for Ea(R)th and Tele(K)inesis");
     # Updating the dictionary according to subclass
     if (cflag == "A"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 25});
+        legal2.remove("A"); # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "D"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 25});
+        legal2.remove("D");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "R"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 25});
+        legal2.remove("R");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "E"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 25});
+        legal2.remove("E");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "F"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 25});
+        legal2.remove("F");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "H"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 25});
+        legal2.remove("H");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "L"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 25});
+        legal2.remove("L");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "K"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 25});
+        legal2.remove("K");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "T"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 25});
+        legal2.remove("T");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "W"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 25});
+        legal2.remove("W");  # Removing the choice so it won't be chosen acidentally as the secondary branch
     elif (cflag == "N"):
         Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 25});
+        legal2.remove("N");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    # Choosing the secondary magic branch
+    cflag = insert_dat(legal2, "Choose Your secondary magic branch between the relevant ones "
+                                  "(First letter capitalized except for Ea(R)th and Tele(K)inesis");
+    # Updating the dictionary according to subclass
+    if (cflag == "A"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 15});
+    elif (cflag == "D"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 15});
+    elif (cflag == "R"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 15});
+    elif (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 15});
+    elif (cflag == "F"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 15});
+    elif (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 15});
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 15});
+    elif (cflag == "K"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 15});
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 15});
+    elif (cflag == "W"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 15});
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 15});
+    # Now for the second knowledge slot and we're finished with the mage. History, Nature, Sociology or Theology
+    legal = ["H", "N", "S", "T"];  # Preparing the "legal" list for the knowledge.
+    # Choosing the second knowledge
+    cflag = insert_dat(legal, "Choose Your second knowledge between the (general): "
+                               "(H)istory, (N)ature, (S)ociology and (T)heology");
+    # Updating the dictionary according to subclass
+    if (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[1]: 10});
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[4]: 10});
+    elif (cflag == "S"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[5]: 10});
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[7]: 10});
+elif (cflag == "sorcerer"):
+    # Creating the dictionary for the basic Sorcerer
+    Charclass = Char_class({skill_lists.Skills.Arcane.conn[4]: 4, skill_lists.Skills.Arcane.skills[7]: 30,
+                            skill_lists.Skills.Arcane.skills[8]: 20, skill_lists.Skills.Arcane.skills[9]: 20,
+                            skill_lists.Skills.Physical.skills[12]: 15,
+                            skill_lists.Skills.Knowledge.skills[0]: 15}, "Sorcerer");
+    # Choosing the main magic source
+    legal = ["E", "L", "N", "P", "S", "V"];  # Preparing the "legal" list for the sources. Changed to legal2 to
+    # handle the secondary source choice
+    cflag = insert_dat(legal, "Choose Your main Magical source between:"
+                              "(E)lemental, (L)ight, (N)ature, (P)lanet, "
+                              "(S)oul, (V)oid");
+    # Updating the dictionary according to source, and the legal main magic branch choices
+    if (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[1]: 4});
+        legal = ["A", "E", "F", "K", "R", "W"];  # Preparing legal list for main magic branch depending on the source.
+        # Air, Elec., Fire, TK, Earth, Water
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[3]: 4});
+        legal = ["H", "K", "L"];  # Preparing legal list for main magic branch depending on the source.
+        # Healing, TK or Light
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[5]: 4});
+        legal = ["H", "K", "N"];  # Preparing legal list for main magic branch depending on the source.
+        # Healing, TK or Nature
+    elif (cflag == "P"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[6]: 4});
+        legal = ["K", "R"];  # Preparing legal list for main magic branch depending on the source.
+        # TK or Earth
+    elif (cflag == "S"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[7]: 4});
+        legal = ["K", "T"];  # Preparing legal list for main magic branch depending on the source.
+        # TK or Telepathy
+    elif (cflag == "V"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.conn[8]: 4});
+        legal = ["D", "K"];  # Preparing legal list for main magic branch depending on the source.
+        # Dark or TK
+    cflag = insert_dat(legal, "Choose Your main magic branch between the relevant ones "
+                              "(First letter capitalized except for Ea(R)th and Tele(K)inesis");
+    # Updating the dictionary according to subclass
+    if (cflag == "A"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 30});
+        legal.remove("A"); # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "D"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 30});
+        legal.remove("D");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "R"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 30});
+        legal.remove("R");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 30});
+        legal.remove("E");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "F"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 30});
+        legal.remove("F");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 30});
+        legal.remove("H");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 30});
+        legal.remove("L");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "K"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 30});
+        legal.remove("K");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 30});
+        legal.remove("T");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "W"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 30});
+        legal.remove("W");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 30});
+        legal.remove("N");  # Removing the choice so it won't be chosen acidentally as the secondary branch
+    # Choosing the secondary magic branch
+    cflag = insert_dat(legal, "Choose Your secondary magic branch between the relevant ones "
+                                  "(First letter capitalized except for Ea(R)th and Tele(K)inesis");
+    # Updating the dictionary according to subclass
+    if (cflag == "A"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[0]: 15});
+    elif (cflag == "D"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[1]: 15});
+    elif (cflag == "R"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[2]: 15});
+    elif (cflag == "E"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[3]: 15});
+    elif (cflag == "F"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[4]: 15});
+    elif (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[5]: 15});
+    elif (cflag == "L"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[6]: 15});
+    elif (cflag == "K"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[12]: 15});
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[13]: 15});
+    elif (cflag == "W"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[14]: 15});
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Arcane.skills[17]: 15});
+    # Now for the second knowledge slot and we're finished with the mage. History, Nature, Sociology or Theology
+    legal = ["H", "N", "S", "T"];  # Preparing the "legal" list for the knowledge.
+    # Choosing the second knowledge
+    cflag = insert_dat(legal, "Choose Your second knowledge between the (general): "
+                               "(H)istory, (N)ature, (S)ociology and (T)heology");
+    # Updating the dictionary according to subclass
+    if (cflag == "H"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[1]: 10});
+    elif (cflag == "N"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[4]: 10});
+    elif (cflag == "S"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[5]: 10});
+    elif (cflag == "T"):
+        Charclass.Claskills.update({skill_lists.Skills.Knowledge.skills[7]: 10});
+
 
 print(Charclass.Claskills); # TEST
 
 
 
-
+# I forgot about the secondary  source!!!! It completely changes the secondary branch choice!!!
+# Need to fix this quickly!! It will solve the problem of having no secondary branch to use.
 
 
 # 25.9.2017, 21:06 approx. - Created the file and the class Char_class with a dummy __init__ for now.
@@ -216,3 +431,15 @@ print(Charclass.Claskills); # TEST
 # 11:17 - Implemented main magical source and main magic branch.
 # 28.10.2017, 22:30 - Before moving on, did rebalancing on the existing things. Anything added later will be at least
 # rebalanced to this degree
+# 3.11.2017, 21:52 - Fixed the secondary weapon proficiency of the fighter: added unarmed as it should have been.
+# 4.11.2017, 10:25 - Removed the choice of the main magic branch from the legal list before the secondary branch choice
+# so as not to allow someone to accidentally choose the same branch twice.
+# 10:37 - Implemented the secondary branch choice with the solution to the empty legal list, only to remember afterwards
+#  that I forgot to implement the secondary branch, which will prevent an empty legal list for the secondary choice!
+# need to implement it.
+# 21:51 - Using a second list, I managed to make it so when you choose both sources, you will have a list of legal
+# branches for your main branch, and a list which is possibly longer, for your legal choices for the secondary branch.
+# 21:56 - I actually finished it completely and tested it at that time.
+# 22:07 - Finally finished implementing mage. Now to test it. 22:09 - It's fine.
+# 22:17 - Implemented the Sorcerer class quite quickly by copying the mage implementation and changing a few things.
+# Tested it by 22:20.
